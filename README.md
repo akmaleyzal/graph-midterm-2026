@@ -34,7 +34,16 @@ perlu dijalankan: mulai dari data mentah, filter periode, impor ke Neo4j, sampai
 > `DBNAME` (sebelum impor, bila graf belum lengkap). Gunakan instance Neo4j yang tidak berisi data lain.
 
 1. Python 3.10 + [uv](https://docs.astral.sh/uv/): `uv sync`.
-   Alternatif sesuai: `uv venv --python 3.10`, aktifkan di terminal `.venv/Source/activate` atau `(Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& ".venv\Scripts\Activate.ps1")`, lalu `uv pip install -r requirements.txt`.
+   Alternatif lewat `requirements.txt` (PowerShell):
+
+   ```powershell
+   uv venv --python 3.10
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+   .venv\Scripts\Activate.ps1
+   uv pip install -r requirements.txt
+   ```
+
+   Di Linux/macOS, aktifkan dengan `source .venv/bin/activate`.
 2. Neo4j: buat dan jalankan instance lokal di Neo4j Desktop (server 2026.x), lalu buat berkas `.env`:
 
    ```
