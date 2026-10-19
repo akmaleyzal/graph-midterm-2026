@@ -11,7 +11,5 @@ __pycache__/
 ecommerce-dataset/item_properties_part1.csv
 ecommerce-dataset/item_properties_part2.csv
 *.zip
-ecommerce-dataset/*
-data/*
 
 scripts/*

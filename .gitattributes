@@ -1,0 +1,2 @@
+# dataset mentah disimpan apa adanya (tanpa konversi CRLF) agar checksum sama di semua OS
+ecommerce-dataset/*.csv -text
