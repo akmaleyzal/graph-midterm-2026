@@ -5,9 +5,9 @@ Negeri Surabaya, Gasal 2026/2027), materi *Python Driver untuk Neo4j dan Rekomen
 
 | | |
 |---|---|
-| Nama | Akmaley Zal |
-| NIM | ‹NIM› |
-| Kelas | ‹Kelas› |
+| Nama | Akmal Rizal |
+| NIM | 23031554078 |
+| Kelas | 2023A |
 
 Seluruh jawaban dan penjelasan ada di **[`main.ipynb`](main.ipynb)**.
 
