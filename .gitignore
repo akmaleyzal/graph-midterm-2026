@@ -1,0 +1,15 @@
+# kredensial & environment lokal
+.env
+.venv/
+myvenv/
+
+# cache
+__pycache__/
+.ipynb_checkpoints/
+
+# berkas dataset > 100 MB (batas GitHub), tidak dipakai di analisis
+ecommerce-dataset/item_properties_part1.csv
+ecommerce-dataset/item_properties_part2.csv
+*.zip
+ecommerce-dataset/*
+data/*

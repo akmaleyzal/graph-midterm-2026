@@ -1,0 +1,33 @@
+[project]
+name = "graph-midterm-2026"
+version = "0.1.0"
+description = "A Python project for graph midterm 2026"
+readme = "README.md"
+authors = [
+    { name = "Akmaley Zal", email = "akmaleyzal@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "cinemagoerng>=0.4",
+    "dotenv>=0.9.9",
+    "imdbinfo>=0.5",
+    "imdbpy>=2020.9.25",
+    "ipykernel>=7.3.0",
+    "matplotlib>=3.10.9",
+    "neo4j==6.4.1",
+    "networkx>=3.4.2",
+    "nose==1.3.7",
+    "numpy>=2.2.6",
+    "pandas>=2.3.3",
+    "python-dotenv>=1.2.4",
+    "scikit-learn>=1.7.2",
+    "scipy>=1.15.3",
+    "tqdm>=4.70.1",
+]
+
+[project.scripts]
+graph-midterm-2026 = "graph_midterm_2026:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
