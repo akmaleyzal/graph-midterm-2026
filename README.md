@@ -1,4 +1,4 @@
-# UTS Graf Sains Data — Rekomendasi RetailRocket dengan Neo4j
+# UTS Graf Sains Data: Rekomendasi RetailRocket dengan Neo4j
 
 Pengerjaan Ujian Tengah Semester mata kuliah **Graf Sains Data** (S1 Sains Data, FMIPA Universitas
 Negeri Surabaya, Gasal 2026/2027), materi *Python Driver untuk Neo4j dan Rekomendasi*.
@@ -34,7 +34,7 @@ perlu dijalankan: mulai dari data mentah, filter periode, impor ke Neo4j, sampai
 > `DBNAME` (sebelum impor, bila graf belum lengkap). Gunakan instance Neo4j yang tidak berisi data lain.
 
 1. Python 3.10 + [uv](https://docs.astral.sh/uv/): `uv sync`.
-   Alternatif sesuai soal: `uv venv myvenv --python 3.10`, aktifkan, lalu `uv pip install -r requirements.txt`.
+   Alternatif sesuai: `uv venv --python 3.10`, aktifkan di terminal `.venv/Source/activate` atau `(Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& ".venv\Scripts\Activate.ps1")`, lalu `uv pip install -r requirements.txt`.
 2. Neo4j: buat dan jalankan instance lokal di Neo4j Desktop (server 2026.x), lalu buat berkas `.env`:
 
    ```
