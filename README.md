@@ -53,6 +53,10 @@ perlu dijalankan: mulai dari data mentah, filter periode, impor ke Neo4j, sampai
    ```
 
    `item_properties_part*.csv` (> 100 MB) tidak disertakan di repositori dan tidak dipakai.
+
+   Cek keaslian data mentah: `events.csv` berisi 2.756.101 baris data dengan SHA-256
+   `3745aa83238b1e6d44d8fda209807899f420084398f94ddf745f3cbcfecbf9e7`
+   (PowerShell: `Get-FileHash ecommerce-dataset/events.csv`; Linux/Git Bash: `sha256sum ecommerce-dataset/events.csv`).
 4. Buka `main.ipynb` dengan kernel `.venv`, lalu *Run All*. Impor ke Neo4j hanya berjalan bila graf belum lengkap.
 
 ## Penyesuaian terhadap kode soal
