@@ -30,6 +30,9 @@ perlu dijalankan: mulai dari data mentah, filter periode, impor ke Neo4j, sampai
 
 ## Cara menjalankan
 
+> **Peringatan:** notebook mengosongkan seluruh isi database `neo4j` (Total Reset pada 1.2) dan database
+> `DBNAME` (sebelum impor, bila graf belum lengkap). Gunakan instance Neo4j yang tidak berisi data lain.
+
 1. Python 3.10 + [uv](https://docs.astral.sh/uv/): `uv sync`.
    Alternatif sesuai soal: `uv venv myvenv --python 3.10`, aktifkan, lalu `uv pip install -r requirements.txt`.
 2. Neo4j: buat dan jalankan instance lokal di Neo4j Desktop (server 2026.x), lalu buat berkas `.env`:
