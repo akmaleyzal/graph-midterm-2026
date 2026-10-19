@@ -9,15 +9,15 @@ Negeri Surabaya, Gasal 2026/2027), materi *Python Driver untuk Neo4j dan Rekomen
 | NIM | 23031554078 |
 | Kelas | 2023A |
 
-Seluruh jawaban dan penjelasan ada di **[`main.ipynb`](main.ipynb)**.
+Seluruh jawaban, kode, dan penjelasan ada di **[`main.ipynb`](main.ipynb)**. Notebook ini satu-satunya yang
+perlu dijalankan: mulai dari data mentah, filter periode, impor ke Neo4j, sampai evaluasi rekomendasi.
 
 ## Isi repositori
 
 | Path | Keterangan |
 |---|---|
 | `main.ipynb` | Notebook jawaban: Tugas Pendahuluan 1.1–1.3 dan Soal UTS 2.1–2.2 |
-| `scripts/import_events.py` | Skrip impor CSV → Neo4j (adaptasi kode soal 1.3), dibuat dari notebook |
-| `data/events_filtered.csv` | Data interaksi hasil filter periode P1 + P2 (kolom `fold`) |
+| `data/events_filtered.csv` | Data interaksi hasil filter periode P1 + P2 (kolom `fold`), dibuat ulang oleh notebook |
 | `ecommerce-dataset/` | Dataset asli RetailRocket (`events.csv`, `category_tree.csv`) |
 | `pyproject.toml`, `uv.lock`, `requirements.txt` | Dependensi |
 
@@ -42,7 +42,8 @@ Seluruh jawaban dan penjelasan ada di **[`main.ipynb`](main.ipynb)**.
    ```
 
    Database `DBNAME` dibuat otomatis oleh notebook bila belum ada.
-3. Dataset: unduh dari Kaggle lalu ekstrak ke `ecommerce-dataset/`.
+3. Dataset: `events.csv` dan `category_tree.csv` sudah disertakan di `ecommerce-dataset/`. Untuk mengunduh ulang
+   dari Kaggle (opsional), ekstrak hasil perintah berikut ke folder yang sama:
 
    ```
    curl.exe -L -o ecommerce-dataset.zip https://www.kaggle.com/api/v1/datasets/download/retailrocket/ecommerce-dataset
@@ -51,19 +52,14 @@ Seluruh jawaban dan penjelasan ada di **[`main.ipynb`](main.ipynb)**.
    `item_properties_part*.csv` (> 100 MB) tidak disertakan di repositori dan tidak dipakai.
 4. Buka `main.ipynb` dengan kernel `.venv`, lalu *Run All*. Impor ke Neo4j hanya berjalan bila graf belum lengkap.
 
-Skrip impor juga bisa dipakai langsung dari terminal:
-
-```
-uv run python scripts/import_events.py -s data -f events_filtered.csv --reset
-```
-
 ## Penyesuaian terhadap kode soal
 
 - Driver `neo4j` 4.2.1 → 6.4.1. Kode soal memakai `execute_query`, `RoutingControl`, dan `execute_write`
   yang baru tersedia mulai driver 5, dan driver 4.2.1 tidak bisa terhubung ke server Neo4j 2026.x (protokol Bolt).
 - Subquery impor memakai `CALL (v, i, row) { ... }`; bentuk `CALL { WITH ... }` sudah deprecated.
-- Skrip impor: argumen tambahan `--database`, `--file`, `--batch-size`, `--reset`; constraint unik untuk
-  `Visitor` dan `Item`; properti `fold` pada relasi; `transactionid` dibaca sebagai string.
+- Kode impor soal 1.3 dijalankan sebagai fungsi di notebook, tanpa berkas skrip dan argparse: constraint unik
+  untuk `Visitor` dan `Item`, batch 10.000 baris, properti `fold` pada relasi, `transactionid` dibaca sebagai
+  string, dan opsi reset sebelum impor.
 
 ## Ringkasan hasil
 
